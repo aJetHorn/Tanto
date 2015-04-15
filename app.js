@@ -10,16 +10,35 @@ $(document).ready( function () {
 	]
 
 	var streamItems = [
-		[people[Math.floor(Math.random()*6)][0]," listened to Mr. Brightside by The Killers"],
-		[people[Math.floor(Math.random()*6)][0]," listened to Legend by Drake"],
-		[people[Math.floor(Math.random()*6)][0]," listened to Novacane by Frank Ocean"],
-		[people[Math.floor(Math.random()*6)][0]," listened to Swim Good by Frank Ocean"],
-		[people[Math.floor(Math.random()*6)][0]," listened to The Genesis by Nas"],
-		[people[Math.floor(Math.random()*6)][0]," listened to School Spirit by Kanye West"],
-		[people[Math.floor(Math.random()*6)][0]," listened to Roses by Outkast"],
-		[people[Math.floor(Math.random()*6)][0]," listened to 10 Bricks by Raekwon"],
-		[people[Math.floor(Math.random()*6)][0]," listened to The Girls on Drugs by Wale"],
-		[people[Math.floor(Math.random()*6)][0]," listened to Louis Vuitton by J. Cole"],
+		// "Mr. Brightside by The Killers",
+		// "Legend by Drake",
+		// "Novacane by Frank Ocean",
+		// "Swim Good by Frank Ocean",
+		// "The Genesis by Nas",
+		// "School Spirit by Kanye West",
+		// "Roses by Outkast",
+		// "10 Bricks by Raekwon",
+		// "The Girls on Drugs by Wale",
+		// "Louis Vuitton by J. Cole",
+		"King and Cross by Asgeir",
+		"What's In It For? by Avi Buffalo",
+		"The Bellman's Speech by Bajka",
+		"Cinemetropolis by Blue Scholars",
+		"Budapest by George Ezra",
+		"Full Circle by Half Moon Run",
+		"Springhouse by Incan Abraham",
+		"A Community Service Announcement by Jonathan Boulet",
+		"Forever Found by Kan Wakan",
+		"Boyhood by Oh No! Yoko",
+		"Musical Chairs by The Panda Band",
+		"Introspective Personality by Ryan Lindsey",
+		"Dreaming by Smallpools",
+		"Dear Sister by Team Mer",
+		"Bizness by tUnE-yArDs",
+		"Ocean Man by Ween",
+		"Whale by Yellow Ostrich",
+		"Ancient Mars by The Zolas",
+		"You by The 1975"
 	]
 
 	var footerHtml = "<div class=\"footer\"><a href=\"\">Listen</a> |<a href=\"\"> Like </a>| <a href=\"\">Dislike</a></div>";
@@ -52,6 +71,7 @@ $(document).ready( function () {
 		var id = 0;
 		for (var i = 0; i < 6; i++){
 			var randomPerson = Math.floor(Math.random()*6);
+
 			if (i < 3){
 				$("#leftColumn").append("<div class=\"record\"><h3>"+people[randomPerson][0]+"</h3><div class=\"label\" id="+id+"></div></div>");
 			}
@@ -66,8 +86,9 @@ $(document).ready( function () {
 
 	function loadStream(){
 		for (var i = 0; i < 10; i++){
-			var randomSong = Math.floor(Math.random()*10);
-			$("#stream").append("<div class=\"item\">"+streamItems[randomSong][0]+streamItems[randomSong][1]+footerHtml+"</div>");
+			var randomPerson = Math.floor(Math.random()*6);
+			var randomSong = Math.floor(Math.random()*17);
+			$("#stream").append("<div class=\"item\">"+people[randomPerson][0]+" listened to "+streamItems[randomSong]+footerHtml+"</div>");
 		}
 	}
 });
