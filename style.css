@@ -30,11 +30,11 @@ body{
 	margin-top: 120px;
 	width: 400px;
 	float: right;
-	padding: 15px;
+	padding: 20px;
 	color: #EEE;
 	border-radius: 5px;
 	background-color: rgba(50, 50, 50, 0.3);
-	font-size: 2.5em;
+	font-size: 2.2em;
 	font-family: 'Quattrocento', serif;
 	/*background-color: #BBB;*/
 	/*background:transparent;*/
@@ -43,15 +43,19 @@ body{
 	text-align: right;
 	list-style: none;
 }
+#signup li{
+	padding: 5px;
+}
+
 #signup input{
-	padding: 1px;
+	padding: 6px;
 	border: none;
 	opacity: .8;
 	border-radius: 2px;
 	padding-top:  -15px;
-	line-height: 28px;
+	/*line-height: 28px;*/
 	outline: none;
-	font-size: 28px;
+	font-size: 22px;
 	width: 240px;
 }
 .formButton{
@@ -60,6 +64,37 @@ body{
 .formButton:hover{
 	opacity: 1;
 	color: #27ae60;
+	cursor: pointer;
+}
+#syncWindow{
+	margin: 35px auto;
+	border-radius: 10px;
+	padding: 15px;
+	width: 400px;
+	height: 350px;
+	background-color: rgba(50, 50, 50, 0.1);
+}
+#syncWindow h2{
+	font-family: 'Quattrocento', serif;
+	text-align: center;
+	font-size: 3em;
+	color: #FFF;
+}
+#musicIcon{
+	opacity: .6;
+	margin: 100px auto;
+	padding: 10px;
+	line-height: 240px;
+	text-align: center;
+	height: 200px;
+	width: 200px;
+	border-radius: 14px;
+	background-color: white;
+	font-size: 15em;
+}
+
+#musicIcon:hover{
+	opacity: 1;
 	cursor: pointer;
 }
 #background-image{

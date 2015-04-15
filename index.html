@@ -11,6 +11,10 @@
 <html>
 	<head>
 		<title> Tanto </title>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="app.js"></script>
+
 		<link rel="stylesheet" href="style.css">
 		<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Quattrocento' rel='stylesheet' type='text/css'>
@@ -25,14 +29,18 @@
 		</div>
 		<div id="signup">
 			<ul>
-				<li> Name: <input type="text" name="name" value=""></li>
-				<li> Email: <input type="text" name="email" value=""></li>
-				<li> Pass: <input type="password" name="password" value=""></li>
+				<li> Login/Register</li>
+				<li> <input type="text" name="name" placeholder="Username or Email"></li>
+				<!--li> Email: <input type="text" name="email" value=""></li-->
+				<li><input type="password" name="password" placeholder="Password"value=""></li>
 				<!--li> Facebook Login | Soundcloud Login </li-->
 			<ul>
 				<span class="formButton" id="playButton">&#10148;</span>
 				<span class="formButton" id="resetButton">&#8635;</span>
-
+		</div>
+		<div id="syncWindow" >
+			<h2> Sync Your Music </h2>
+			<div id="musicIcon"> &#9835;</div>
 		</div>
 	</body>
 </html>
