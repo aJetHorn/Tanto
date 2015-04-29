@@ -15,6 +15,8 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="app.js"></script>
 
+		<script type="text/javascript"
+ src="//api.filepicker.io/v1/filepicker.js"></script>
 		<link rel="stylesheet" href="style.css">
 		<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Quattrocento' rel='stylesheet' type='text/css'>
@@ -29,7 +31,7 @@
 		</div>
 		<div id="signup">
 			<ul>
-				<li> Login/Register</li>
+				<li style="text-align: center;"> Login</li>
 				<li> <input type="text" name="name" placeholder="Username or Email"></li>
 				<!--li> Email: <input type="text" name="email" value=""></li-->
 				<li><input type="password" name="password" placeholder="Password"value=""></li>
@@ -40,7 +42,24 @@
 		</div>
 		<div id="syncWindow" >
 			<h2> Sync Your Music </h2>
-			<div id="syncButton"><a href="/dashboard.html"> &#9835;</a></div>
+			<div id="syncButton"><!--input type="filepicker" data-fp-apikey="AeGyWMKdMTEOYyFIWxrqlz" data-fp-mimetypes="*/*" data-fp-container="modal" onchange="alert(event.fpfile.url)"--><span> &#9835;</span></div>
 		</div>
+		<div id="loadMetaDataWindow">
+			<h2> Parsing Metadata </h2>
+			<div id="loadingArea">
+				<div class="load-column-container">
+  					<div class="load-column column-one"></div>
+  					<div class="load-column column-two"></div>
+  					<div class="load-column column-three"></div>
+  					<div class="load-column column-four"></div>
+  					<div class="load-column column-five"></div>
+  					<div class="load-column column-six"></div>
+  					<div class="load-column column-seven"></div>
+  					<div class="load-column column-eight"></div>
+  					<div class="load-column column-nine"></div>
+				</div>
+			</div>
+		</div>
+
 	</body>
 </html>

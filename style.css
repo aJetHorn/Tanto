@@ -69,12 +69,12 @@ body{
 #syncWindow{
 	margin: 35px auto;
 	border-radius: 10px;
-	padding: 15px;
+	padding: 20px;
 	width: 400px;
-	height: 350px;
-	background-color: rgba(50, 50, 50, 0.1);
+	height: 520px;
+	background-color: rgba(50, 50, 50, 0.25);
 }
-#syncWindow h2{
+#syncWindow h2, #loadMetaDataWindow h2{
 	font-family: 'Quattrocento', serif;
 	text-align: center;
 	font-size: 3em;
@@ -82,18 +82,21 @@ body{
 }
 #syncButton{
 	opacity: .6;
-	margin: 100px auto;
-	padding: 10px;
-	line-height: 240px;
+	margin: 50px auto;
+	/*padding: 10px;*/
+	/*line-height: 240px;*/
 	text-align: center;
-	height: 200px;
-	width: 200px;
-	border-radius: 14px;
+	/*height: 200px;
+	width: 200px;*/
+	border-radius: 300px;
 	background-color: white;
-	font-size: 15em;
+	font-size: 18em;
+	transition: opacity .55s ease-in-out;
+   -moz-transition: opacity .55s ease-in-out;
+   -webkit-transition: opacity .55s ease-in-out;
 }
 
-#syncButton a{
+#syncButton span{
 	color: #000;
 	text-decoration: none;
 }
@@ -102,7 +105,24 @@ body{
 	opacity: 1;
 	cursor: pointer;
 }
+#loadMetaDataWindow{
+	position: absolute;
+	top: 240px;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	border-radius: 10px;
+	border: 1px solid #ecf0f1;
+	padding: 20px;
+	width: 400px;
+	background-color: rgba(50, 50, 50, 0.4);
+}
+
 #background-image{
+/*  -webkit-filter: blur(15px);
+  -webkit-filter: grayscale(.6);*/
+  -webkit-transition: -webkit-filter 2s; /* Safari */
   min-width: 1100px;
   position: fixed;
   left: 0;
@@ -234,4 +254,67 @@ body{
 }
 #discoverHeader h1{
 	font-size: 2.5em;
+}
+
+/*Loading Animation CSS*/
+body {background-color: #eee;}
+
+.spacer { height: 50px; }
+
+@-moz-keyframes translate {
+  0% {-webkit-transform: translate(0px, 0px);}
+  50% {-webkit-transform: translate(40px, 0px);}
+}
+
+@-webkit-keyframes translate {
+  0% {-webkit-transform: translate(0px, 0px);}
+  50% {-webkit-transform: translate(40px, 0px);}
+}
+
+
+@-webkit-keyframes grow {
+  0% {height: 0px;}
+  50% {height: 15px;}
+}
+
+.load-column-container {width: 130px; height: 35px; margin: auto; position: relative;}
+.load-column { 
+  width: 10px;
+  height: 0px;
+  background-color: #ecf0f1;
+  position: absolute;
+  bottom: 0px;
+  -webkit-animation-name: grow; 
+  -webkit-animation-duration: 2s; 
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
+.column-two {margin-left: 12px; -webkit-animation-delay: 0.25s;}
+.column-three {margin-left: 24px; -webkit-animation-delay: 0.5s;}
+.column-four {margin-left: 36px; -webkit-animation-delay: 0.75s;}
+.column-five {margin-left: 48px; -webkit-animation-delay: 1s;}
+.column-six {margin-left: 60px; -webkit-animation-delay: 1.25s;}
+.column-seven {margin-left: 72px; -webkit-animation-delay: 1.5s;}
+.column-eight {margin-left: 84px; -webkit-animation-delay: 1.75s;}
+.column-nine {margin-left: 96px; -webkit-animation-delay: 2s;}
+
+
+@-webkit-keyframes loading {
+	from {-webkit-transform: rotate(0deg);}
+	to {-webkit-transform: rotate(360deg);}
+}
+
+@-moz-keyframes loading {
+	from {-moz-transform: rotate(0deg);}
+	to {-moz-transform: rotate(360deg);}
+}
+
+@-o-keyframes loading {
+	from {-o-transform: rotate(0deg);}
+	to {-o-transform: rotate(360deg);}
+}
+
+@keyframes loading {
+	from {transform: rotate(0deg);}
+	to {transform: rotate(360deg);}
 }

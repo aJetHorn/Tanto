@@ -45,6 +45,7 @@ $(document).ready( function () {
 
 	console.log(streamItems[0][0]);
 	$("#syncWindow").toggle();
+	$("#loadMetaDataWindow").toggle();
 	$("#playButton").on( "click", function(){
 		$("#signup").hide();
 		$("#syncWindow").toggle();
@@ -91,4 +92,32 @@ $(document).ready( function () {
 			$("#stream").append("<div class=\"item\">"+people[randomPerson][0]+" listened to "+streamItems[randomSong]+footerHtml+"</div>");
 		}
 	}
+
+	//filePicker
+	filepicker.setKey("AeGyWMKdMTEOYyFIWxrqlz");
+	$("#syncButton").on("click", function(){
+		filepicker.pick(
+			//comment to allow for other input types (error-prone)
+			// {
+			// 	mimetypes: ['text/plain']
+			// },
+			function(Blob){
+				$.ajax({
+					url : Blob.url,
+					dataType: "text",
+					success : function (data) {
+						console.log("Metadata file uploaded successfully");
+						$("#syncWindow").toggle();
+						$("#title").toggle();
+						//$("#background-image").css("webkitFilter", "grayscale(0.6)");
+						$("#background-image").css("webkitFilter", "blur(8px)");
+						$("#loadMetaDataWindow").toggle();
+						
+
+						//.css("-webkit-filter", "blur(5px)");
+					}
+				});
+			}
+		);
+	});
 });
