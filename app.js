@@ -112,9 +112,12 @@ $(document).ready( function () {
 						//$("#background-image").css("webkitFilter", "grayscale(0.6)");
 						$("#background-image").css("webkitFilter", "blur(8px)");
 						$("#loadMetaDataWindow").toggle();
-						
 
-						//.css("-webkit-filter", "blur(5px)");
+						setTimeout(
+  							function() 
+  							{
+  								window.location.replace("/dashboard.html");
+  							}, 12000);
 					}
 				});
 			}
