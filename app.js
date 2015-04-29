@@ -80,14 +80,36 @@ $(document).ready( function () {
 	});
 
 	loadPeople();
-	loadStream();
+	//loadStream();
 	loadDiscoverBody();
+	loadFollowers();
+	loadFollowing();
 
 	function loadDiscoverBody(){
 		var id = 10;
 		for (var i = 0; i < 18; i++){
 			var randomPerson = Math.floor(Math.random()*people.length);
 				$("#discoverBody").append("<div class=\"record\"><h3>"+people[randomPerson][0]+"</h3><div class=\"label\" id="+id+"></div></div>");
+			$('#'+id).css("background-image", "url("+people[randomPerson][1]+")"); 
+			id++; 
+		}
+	}
+
+	function loadFollowers(){
+		var id = 10;
+		for (var i = 0; i < 6; i++){
+			var randomPerson = Math.floor(Math.random()*people.length);
+				$("#followersContainer").append("<div class=\"record\"><h3>"+people[randomPerson][0]+"</h3><div class=\"label\" id="+id+"></div></div>");
+			$('#'+id).css("background-image", "url("+people[randomPerson][1]+")"); 
+			id++; 
+		}
+	}
+
+	function loadFollowing(){
+		var id = 20;
+		for (var i = 0; i < 6; i++){
+			var randomPerson = Math.floor(Math.random()*people.length);
+				$("#followingContainer").append("<div class=\"record\"><h3>"+people[randomPerson][0]+"</h3><div class=\"label\" id="+id+"></div></div>");
 			$('#'+id).css("background-image", "url("+people[randomPerson][1]+")"); 
 			id++; 
 		}
@@ -111,10 +133,11 @@ $(document).ready( function () {
 	}
 
 	function loadStream(){
-		for (var i = 0; i < 10; i++){
-			var randomPerson = Math.floor(Math.random()*6);
-			var randomSong = Math.floor(Math.random()*17);
-			$("#stream").append("<div class=\"item\">"+people[randomPerson][0]+" listened to "+streamItems[randomSong]+footerHtml+"</div>");
+		for (var i = 0; i < 2; i++){
+			var randomPerson = Math.floor(Math.random()*people.length);
+			var randomPerson2 = Math.floor(Math.random()*people.length);
+			//var randomSong = Math.floor(Math.random()*17);
+			$("#stream").append("<div class=\"item\"><span class=\"streamLink\">"+people[randomPerson][0]+"</span> followed <span class=\"streamLink\">"+people[randomPerson2][0]+"</span></div>");
 		}
 	}
 
@@ -136,21 +159,10 @@ $(document).ready( function () {
 		$(".playButton__play").css("opacity", .1);
 	}
 
-	//test();
-	// console.log($("imag.image__full.g-transition-opacity"));
-	// $(".image__full.g-transition-opacity").toggle();
-
 	console.log($("#widget"));
 
 	console.log($("#sc1"));
 
-	// $("#widget").ready(function(){
-	// 	console.log($(this));
-	// });
-	
-	// $("img").mouseover(function(){
-	// 	$(this).attr("src", "https://scontent-lga.xx.fbcdn.net/hphotos-ash2/v/t1.0-9/1471907_10201820037156922_1579569729_n.jpg?oh=9624036126353b4a3a518833c1f24b98&oe=5597D4DE");
-	// });
 
 	$(".scItem .hide").on("click", function(){
 		$(this).parents('.scItem').toggle()
@@ -168,10 +180,6 @@ $(document).ready( function () {
 	filepicker.setKey("AeGyWMKdMTEOYyFIWxrqlz");
 	$("#syncButton").on("click", function(){
 		filepicker.pick(
-			//comment to allow for other input types (error-prone)
-			// {
-			// 	mimetypes: ['text/plain']
-			// },
 			function(Blob){
 				$.ajax({
 					url : Blob.url,
@@ -188,7 +196,7 @@ $(document).ready( function () {
   							function() 
   							{
   								window.location.replace("/dashboard.html");
-  							}, 12000);
+  							}, 6000);
 					}
 				});
 			}
