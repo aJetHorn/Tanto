@@ -195,7 +195,7 @@ $(document).ready( function () {
 						setTimeout(
   							function() 
   							{
-  								window.location.replace("/dashboard.html");
+  								window.location.replace("/Tanto/dashboard.html");
   							}, 6000);
 					}
 				});
